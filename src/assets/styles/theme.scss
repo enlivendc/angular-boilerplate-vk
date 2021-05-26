@@ -1,0 +1,72 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+
+
+$mat-green: (50 : #eaf5ec,
+  100 : #cae7cf,
+  200 : #a7d7af,
+  300 : #84c68f,
+  400 : #69ba77,
+  500 : #4fae5f,
+  600 : #48a757,
+  700 : #3f9d4d,
+  800 : #369443,
+  900 : #268432,
+  A100 : #c5ffcc,
+  A200 : #92ff9f,
+  A400 : #5fff72,
+  A700 : #46ff5b,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  ));
+
+
+$account-web-app-primary: mat-palette($mat-green, 500);
+$account-web-app-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$account-web-app-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$account-web-app-theme: mat-light-theme((color: (primary: $account-web-app-primary,
+      accent: $account-web-app-accent,
+      warn: $account-web-app-warn,
+    )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($account-web-app-theme);
+
+
+$border-color:#cfd8e3;
+$light-gray:#B9BFBF;
+$gray:#475569;
+$danger:#dc3545;
+
+@import './general.scss';
